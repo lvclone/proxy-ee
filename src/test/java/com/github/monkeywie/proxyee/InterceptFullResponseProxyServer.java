@@ -10,24 +10,17 @@ import com.github.monkeywie.proxyee.util.HttpUtil;
 import io.netty.handler.codec.http.FullHttpResponse;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.Charset;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Slf4j
 public class InterceptFullResponseProxyServer {
 
     public static void main(String[] args) throws Exception {
-        HttpProxyServerConfig config = new HttpProxyServerConfig();
-        config.setHandleSsl(true);
-        // 设置Ciphers 用于改变 Client Hello 握手协议指纹
-        Set<String> defaultCiphers = new LinkedHashSet<String>();
-        defaultCiphers.add("TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_RSA_WITH_AES_128_CBC_SHA");
-        defaultCiphers.add("TLS_RSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA");
-        config.setCiphers(defaultCiphers);
+        HttpProxyServerConfig config = getHttpProxyServerConfig();
         new HttpProxyServer()
                 .serverConfig(config)
                 .proxyInterceptInitializer(new HttpProxyInterceptInitializer() {
@@ -38,9 +31,12 @@ public class InterceptFullResponseProxyServer {
 
                             @Override
                             public boolean match(HttpRequest httpRequest, HttpResponse httpResponse, HttpProxyInterceptPipeline pipeline) {
+
+                                log.info("{}", httpRequest.headers());
+
                                 //在匹配到百度首页时插入js
-                                return HttpUtil.checkUrl(pipeline.getHttpRequest(), "^www.baidu.com$")
-                                        && HttpUtil.isHtml(httpRequest, httpResponse);
+                                return HttpUtil.checkUrl(pipeline.getHttpRequest(), "^www.baidu.com$") && HttpUtil.isHtml(httpRequest, httpResponse);
+//                                return false;
                             }
 
                             @Override
@@ -50,13 +46,27 @@ public class InterceptFullResponseProxyServer {
                                 System.out.println(httpResponse.content().toString(Charset.defaultCharset()));
                                 //修改响应头和响应体
                                 httpResponse.headers().set("handel", "edit head");
-                    /*int index = ByteUtil.findText(httpResponse.content(), "<head>");
-                    ByteUtil.insertText(httpResponse.content(), index, "<script>alert(1)</script>");*/
+                                /*int index = ByteUtil.findText(httpResponse.content(), "<head>");
+                                ByteUtil.insertText(httpResponse.content(), index, "<script>alert(1)</script>");*/
                                 httpResponse.content().writeBytes("<script>alert('hello proxyee')</script>".getBytes());
                             }
                         });
                     }
                 })
                 .start(9999);
+    }
+
+    private static HttpProxyServerConfig getHttpProxyServerConfig() {
+        HttpProxyServerConfig config = new HttpProxyServerConfig();
+        config.setHandleSsl(true);
+        // 设置Ciphers 用于改变 Client Hello 握手协议指纹
+        Set<String> defaultCiphers = new LinkedHashSet<String>();
+        defaultCiphers.add("TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256");
+        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256");
+        defaultCiphers.add("TLS_RSA_WITH_AES_128_CBC_SHA");
+        defaultCiphers.add("TLS_RSA_WITH_AES_128_GCM_SHA256");
+        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA");
+        config.setCiphers(defaultCiphers);
+        return config;
     }
 }
