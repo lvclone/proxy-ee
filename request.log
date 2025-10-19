@@ -1,0 +1,383 @@
+01:02:55.450 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: metaso.cn/api/ppt/user/info true
+
+01:02:55.451 [nioEventLoopGroup-2-3] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+metaso.cn/api/ppt/user/info class io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: GET
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI: /api/ppt/user/info
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH: /api/ppt/user/info
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = metaso.cn
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: metaso-pc = pc
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: sec-ch-ua-platform = "
+macOS"
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept =
+application/json, text/plain, */*
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: sec-ch-ua = "Chromium"
+;v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: token =
+wr8+pHu3KYryzz0O2MaBSNUZbVLjLUYC1FR4sKqSW0r7cpL+iG/2N5cdq9x0z7BqH9I/3fGDkqTQADHmkAvtcK9ZG7Vdy2Dd354NvB/+w8lpwIdooCagKVYnjYOZ3u3zgDXpuAN0C3iwSmnMD++iZA==
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: sec-ch-ua-mobile = ?0
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site =
+same-origin
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br, zstd
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9,en;q=0.8
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Cookie =
+JSESSIONID=B91CF5D63331E67F279DF393BBD73B2F; tid=59f42742-c9b0-4fec-8a84-ed389dd89f09; __
+eventn_id_UMO2dYNwFz=3f2d076n3i; uid=67c6c4e0f70db74066307f93; sid=e65e3a297c124c5caaf67997bfdbe8a0;
+aliyungf_tc=c667375641a3dbdeaf5f9bf1380ee47a367ef3ffdfc9aca2147afd72ed881bed; s=sbdpc1; s=sbdpc1; hideLeftMenu=1;
+newSearch=false
+01:02:55.451 [nioEventLoopGroup-2-3] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:56.608 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999]
+READ: [id: 0x83f089d3, L:/127.0.0.1:9999 - R:/127.0.0.1:62628]
+01:02:56.608 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+01:02:56.665 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url:
+mmbiz.qpic.cn/mmbiz_png/IVHeS9UFDzEmxLg8rXV9iaYS8ibDnryqS8f9BB9RvLzxlg3l32Zw5pZsUC7t8fLdC4gwKAEP5cj2eVI1WeItTpyg/640?wx_fmt=png&wxfrom=200
+true
+
+01:02:56.666 [nioEventLoopGroup-2-6] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+mmbiz.qpic.cn/mmbiz_png/IVHeS9UFDzEmxLg8rXV9iaYS8ibDnryqS8f9BB9RvLzxlg3l32Zw5pZsUC7t8fLdC4gwKAEP5cj2eVI1WeItTpyg/640?wx_fmt=png&wxfrom=200
+class io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: GET
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI:
+/mmbiz_png/IVHeS9UFDzEmxLg8rXV9iaYS8ibDnryqS8f9BB9RvLzxlg3l32Zw5pZsUC7t8fLdC4gwKAEP5cj2eVI1WeItTpyg/640?wx_fmt=png&wxfrom=200
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH:
+/mmbiz_png/IVHeS9UFDzEmxLg8rXV9iaYS8ibDnryqS8f9BB9RvLzxlg3l32Zw5pZsUC7t8fLdC4gwKAEP5cj2eVI1WeItTpyg/640
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM: wx_fmt = [png]
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM: wxfrom = [200]
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = mmbiz.qpic.cn
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Proxy-Connection =
+keep-alive
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF MacWechat/3.8.7(0x13080712)
+UnifiedPCMacWechat(0xf26411f0) XWEB/16512
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept =
+image/wxpic,image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+01:02:56.666 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Referer = https://servicewechat.com/wx14eb1126b8a25636/162/page-frame.html
+01:02:56.667 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate
+01:02:56.667 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9
+01:02:56.667 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: If-Modified-Since = Thu,
+07 Aug 2025 11:23:06 GMT
+01:02:56.667 [nioEventLoopGroup-2-6] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:56.911 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999]
+READ: [id: 0xc0af29ba, L:/127.0.0.1:9999 - R:/127.0.0.1:62636]
+01:02:56.911 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+01:02:56.942 [nioEventLoopGroup-4-9] DEBUG
+io.netty.handler.ssl.SslHandler - [id: 0xc0af29ba, L:/127.0.0.1:9999 - R:/127.0.0.1:62636] HANDSHAKEN: protocol:TLSv1.3
+cipher suite:TLS_AES_128_GCM_SHA256
+01:02:57.025 [nioEventLoopGroup-2-7] DEBUG io.netty.handler.ssl.util.InsecureTrustManagerFactory - Accepting a server
+certificate: CN=tcp-crm.com, O=天丝红牛（北京）贸易有限公司, ST=北京市, C=CN
+01:02:57.065 [nioEventLoopGroup-2-7] DEBUG
+io.netty.handler.ssl.SslHandler - [id: 0x48554a84, L:/192.168.3.68:62641 - R:tcp-crm.com/121.199.10.159:443] HANDSHAKEN:
+protocol:TLSv1.2 cipher suite:TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+01:02:57.104 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: tcp-crm.com/dtc/CMiniApi/Configure/GetPublicConfig?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+true
+
+01:02:57.105 [nioEventLoopGroup-2-7] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+tcp-crm.com/dtc/CMiniApi/Configure/GetPublicConfig?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 class
+io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: POST
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI:
+/dtc/CMiniApi/Configure/GetPublicConfig?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH:
+/dtc/CMiniApi/Configure/GetPublicConfig
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM:
+SessionKey = [S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0]
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = tcp-crm.com
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Length = 2
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF MacWechat/3.8.7(0x13080712)
+UnifiedPCMacWechat(0xf26411f0) XWEB/16512
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: xweb_xhr = 1
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Type =
+application/json
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept = */*
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site =
+cross-site
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Referer = https://servicewechat.com/wx14eb1126b8a25636/162/page-frame.html
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9
+01:02:57.105 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: tcp-crm.com/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 true
+
+01:02:57.408 [nioEventLoopGroup-2-7] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+tcp-crm.com/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 class
+io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: POST
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI:
+/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH:
+/dtc/CMiniApi/OAuthProgram/GetUserInfo
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM:
+SessionKey = [S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0]
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = tcp-crm.com
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Length = 2
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF MacWechat/3.8.7(0x13080712)
+UnifiedPCMacWechat(0xf26411f0) XWEB/16512
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: xweb_xhr = 1
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Type =
+application/json
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept = */*
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site =
+cross-site
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Referer = https://servicewechat.com/wx14eb1126b8a25636/162/page-frame.html
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9
+01:02:57.408 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: tcp-crm.com/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 true
+
+01:02:57.458 [nioEventLoopGroup-2-7] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+tcp-crm.com/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 class
+io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: POST
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI:
+/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH:
+/dtc/CMiniApi/OAuthProgram/GetUserInfo
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM:
+SessionKey = [S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0]
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = tcp-crm.com
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Length = 2
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF MacWechat/3.8.7(0x13080712)
+UnifiedPCMacWechat(0xf26411f0) XWEB/16512
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: xweb_xhr = 1
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Type =
+application/json
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept = */*
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site =
+cross-site
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Referer = https://servicewechat.com/wx14eb1126b8a25636/162/page-frame.html
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9
+01:02:57.458 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: tcp-crm.com/dtc/CMiniApi/ScanPhase18/GetActivityInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+true
+
+01:02:57.505 [nioEventLoopGroup-2-7] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+tcp-crm.com/dtc/CMiniApi/ScanPhase18/GetActivityInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 class
+io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: POST
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI:
+/dtc/CMiniApi/ScanPhase18/GetActivityInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH:
+/dtc/CMiniApi/ScanPhase18/GetActivityInfo
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM:
+SessionKey = [S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0]
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = tcp-crm.com
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Length = 2
+01:02:57.505 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF MacWechat/3.8.7(0x13080712)
+UnifiedPCMacWechat(0xf26411f0) XWEB/16512
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: xweb_xhr = 1
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Type =
+application/json
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept = */*
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site =
+cross-site
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Referer = https://servicewechat.com/wx14eb1126b8a25636/162/page-frame.html
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9
+01:02:57.506 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: tcp-crm.com/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 true
+
+01:02:57.553 [nioEventLoopGroup-2-7] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+tcp-crm.com/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 class
+io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: POST
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI:
+/dtc/CMiniApi/OAuthProgram/GetUserInfo?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH:
+/dtc/CMiniApi/OAuthProgram/GetUserInfo
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM:
+SessionKey = [S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0]
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = tcp-crm.com
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Length = 2
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF MacWechat/3.8.7(0x13080712)
+UnifiedPCMacWechat(0xf26411f0) XWEB/16512
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: xweb_xhr = 1
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Type =
+application/json
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept = */*
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site =
+cross-site
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Referer = https://servicewechat.com/wx14eb1126b8a25636/162/page-frame.html
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9
+01:02:57.553 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:57.598 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999]
+READ: [id: 0x4605e0d8, L:/127.0.0.1:9999 - R:/127.0.0.1:62647]
+01:02:57.598 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+01:02:57.602 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: tcp-crm.com/dtc/CMiniApi/ScanPhase18/ScanVerify?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 true
+
+01:02:57.602 [nioEventLoopGroup-2-7] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+tcp-crm.com/dtc/CMiniApi/ScanPhase18/ScanVerify?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0 class
+io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:57.602 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: POST
+01:02:57.602 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI:
+/dtc/CMiniApi/ScanPhase18/ScanVerify?SessionKey=S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0
+01:02:57.602 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH:
+/dtc/CMiniApi/ScanPhase18/ScanVerify
+01:02:57.602 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - QUERY PARAM:
+SessionKey = [S_RedBullDTC_7ae4cbcc-acfb-4805-a7a3-27611d7bbce0]
+01:02:57.602 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = tcp-crm.com
+01:02:57.602 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Length = 124
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+MicroMessenger/7.0.20.1781(0x6700143B) NetType/WIFI MiniProgramEnv/Mac MacWechat/WMPF MacWechat/3.8.7(0x13080712)
+UnifiedPCMacWechat(0xf26411f0) XWEB/16512
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: xweb_xhr = 1
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Type =
+application/json
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept = */*
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site =
+cross-site
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Referer = https://servicewechat.com/wx14eb1126b8a25636/162/page-frame.html
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9
+01:02:57.603 [nioEventLoopGroup-2-7] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:02:57.614 [nioEventLoopGroup-4-10] DEBUG
+io.netty.handler.ssl.SslHandler - [id: 0x4605e0d8, L:/127.0.0.1:9999 - R:/127.0.0.1:62647] HANDSHAKEN: protocol:TLSv1.3
+cipher suite:TLS_AES_128_GCM_SHA256
+01:02:58.673 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999]
+READ: [id: 0x6ed559b9, L:/127.0.0.1:9999 - R:/127.0.0.1:62650]
+01:02:58.674 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+01:02:58.697 [nioEventLoopGroup-4-11] DEBUG
+io.netty.handler.ssl.SslHandler - [id: 0x6ed559b9, L:/127.0.0.1:9999 - R:/127.0.0.1:62650] HANDSHAKEN: protocol:TLSv1.3
+cipher suite:TLS_AES_128_GCM_SHA256
+01:02:59.233 [nioEventLoopGroup-2-8] DEBUG io.netty.handler.ssl.util.InsecureTrustManagerFactory - Accepting a server
+certificate: CN=tabrr.com
+01:02:59.475 [nioEventLoopGroup-2-8] DEBUG
+io.netty.handler.ssl.SslHandler - [id: 0x4f4e7092, L:/192.168.3.68:62651 - R:account.tabrr.com/104.21.19.6:443]
+HANDSHAKEN: protocol:TLSv1.2 cipher suite:TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+01:02:59.741 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.website.HttpCacheIntercept -
+> > > > > > > > > > > > > > > > > > > >
+url: account.tabrr.com/api/config/status true
+
+01:02:59.742 [nioEventLoopGroup-2-8] INFO
+com.github.monkeywie.proxyee.website.HttpCacheIntercept - < < < < < < < < < < < < < < < < < < < < url:
+account.tabrr.com/api/config/status class io.netty.handler.codec.http.DefaultHttpRequest
+
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - METHOD: POST
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - FULL URI: /api/config/status
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - PATH: /api/config/status
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Host = account.tabrr.com
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Connection = keep-alive
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Content-Length = 0
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: User-Agent =
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: authorization = Bearer
+36860|ODSJEdojjQc80fQcJErnpABZn1vKWx7W6ioUiaon
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept = */*
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Origin =
+chrome-extension://ehmneimbopigfgchjglgngamiccjkijh
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Site = none
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Mode = cors
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Sec-Fetch-Dest = empty
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER:
+Sec-Fetch-Storage-Access = active
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Encoding = gzip,
+deflate, br, zstd
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - HEADER: Accept-Language =
+zh-CN,zh;q=0.9,en;q=0.8
+01:02:59.742 [nioEventLoopGroup-2-8] INFO com.github.monkeywie.proxyee.util.HttpUtil - --- Headers End ---
+01:03:00.399 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999]
+READ: [id: 0xa16179e3, L:/127.0.0.1:9999 - R:/127.0.0.1:62653]
+01:03:00.400 [nioEventLoopGroup-3-1] DEBUG
+io.netty.handler.logging.LoggingHandler - [id: 0xb0b81f59, L:/0:0:0:0:0:0:0:0:9999] READ COMPLETE
+01:03:00.416 [nioEventLoopGroup-4-12] DEBUG
+io.netty.handler.ssl.SslHandler - [id: 0xa16179e3, L:/127.0.0.1:9999 - R:/127.0.0.1:62653] HANDSHAKEN: protocol:TLSv1.3
+cipher suite:TLS_AES_128_GCM_SHA256
