@@ -1,47 +1,90 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!--        <version>3.3.5</version>-->
+        <version>2.2.4.RELEASE</version>
 
-    <groupId>com.github.monkeywie</groupId>
-    <artifactId>proxyee</artifactId>
-    <version>1.7.7</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
+    <groupId>com.github</groupId>
+    <artifactId>http-cache</artifactId>
+    <version>1.7.6</version>
     <packaging>jar</packaging>
+
 
     <name>proxyee</name>
     <description>HTTP proxy server,support HTTPS and websocket.MITM impl,intercept and tamper HTTPS traffic.
     </description>
     <url>https://github.com/monkeyWie/proxyee</url>
 
-    <licenses>
-        <license>
-            <name>The MIT License (MIT)</name>
-            <url>http://opensource.org/licenses/mit-license.php</url>
-        </license>
-    </licenses>
+    <!--    <developers>-->
+    <!--        <developer>-->
+    <!--            <name>monkeyWie</name>-->
+    <!--            <email>liwei-8466@qq.com</email>-->
+    <!--        </developer>-->
+    <!--    </developers>-->
 
-    <developers>
-        <developer>
-            <name>monkeyWie</name>
-            <email>liwei-8466@qq.com</email>
-        </developer>
-    </developers>
-
+    <!--    <scm>-->
+    <!--        <connection>scm:git:https://github.com/monkeyWie/proxyee.git</connection>-->
+    <!--        <developerConnection>scm:git:https://github.com/monkeyWie/proxyee.git</developerConnection>-->
+    <!--        <url>https://github.com/monkeyWie/proxyee</url>-->
+    <!--    </scm>-->
     <scm>
-        <connection>scm:git:https://github.com/monkeyWie/proxyee.git</connection>
-        <developerConnection>scm:git:https://github.com/monkeyWie/proxyee.git</developerConnection>
-        <url>https://github.com/monkeyWie/proxyee</url>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
     </scm>
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
         <netty.version>4.1.94.Final</netty.version>
+        <fastjson.version>1.2.72</fastjson.version>
+        <hutool.version>5.4.5</hutool.version>
+        <guava.version>29.0-jre</guava.version>
     </properties>
-
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-buffer</artifactId>
@@ -71,6 +114,19 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcpkix-jdk15on</artifactId>
             <version>1.60</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -118,8 +174,14 @@
                     <doclint>none</doclint>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
+
 
     <profiles>
         <profile>
