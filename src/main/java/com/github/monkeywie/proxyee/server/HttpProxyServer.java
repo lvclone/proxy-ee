@@ -1,6 +1,7 @@
 package com.github.monkeywie.proxyee.server;
 
 import com.github.monkeywie.proxyee.config.IdleStateCheck;
+import com.github.monkeywie.proxyee.config.ProxyInitializer;
 import com.github.monkeywie.proxyee.crt.CertPool;
 import com.github.monkeywie.proxyee.crt.CertUtil;
 import com.github.monkeywie.proxyee.exception.HttpProxyExceptionHandle;
@@ -179,26 +180,7 @@ public class HttpProxyServer {
                 .channel(NioServerSocketChannel.class)
 //                .option(ChannelOption.SO_BACKLOG, 100)
                 .handler(new LoggingHandler(LogLevel.DEBUG))
-                .childHandler(new ChannelInitializer<Channel>() {
-
-                    @Override
-                    protected void initChannel(Channel ch) throws Exception {
-                        ch.pipeline().addLast("httpCodec", new HttpServerCodec(
-                                serverConfig.getMaxInitialLineLength(),
-                                serverConfig.getMaxHeaderSize(),
-                                serverConfig.getMaxChunkSize()));
-                        if (serverConfig.getIdleStateCheck() != null) {
-                            IdleStateCheck idleStateCheck = serverConfig.getIdleStateCheck();
-                            ch.pipeline().addLast("idleStateCheck",
-                                    new IdleStateHandler(idleStateCheck.getReaderIdleTime(), idleStateCheck.getWriterIdleTime(),
-                                            idleStateCheck.getAllIdleTime(), TimeUnit.MILLISECONDS)
-                            );
-                        }
-                        ch.pipeline().addLast("serverHandle",
-                                new HttpProxyServerHandler(serverConfig, proxyInterceptInitializer, proxyConfig,
-                                        httpProxyExceptionHandle));
-                    }
-                });
+                .childHandler(new ProxyInitializer(serverConfig, new HttpProxyServerHandler(serverConfig, proxyInterceptInitializer, proxyConfig, httpProxyExceptionHandle)));
 
         return ip == null ? bootstrap.bind(port) : bootstrap.bind(ip, port);
     }
