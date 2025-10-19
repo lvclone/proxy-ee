@@ -1,19 +1,17 @@
 package com.github.monkeywie.proxyee.util;
 
-import io.netty.handler.codec.http.HttpHeaderNames;
-import io.netty.handler.codec.http.HttpHeaders;
-import io.netty.handler.codec.http.HttpRequest;
-import io.netty.handler.codec.http.HttpResponse;
+import io.netty.handler.codec.http.*;
 import io.netty.util.AsciiString;
+import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+import java.util.Map;
 
+@Slf4j
 public class HttpUtil {
 
-    /**
-     * 检测url是否匹配
-     */
-    public static boolean checkUrl(HttpRequest httpRequest, String regex) {
+    public static String buildUrl(HttpRequest httpRequest){
         String host = httpRequest.headers().get(HttpHeaderNames.HOST);
-        if (host != null && regex != null) {
+        if (host != null) {
             String url;
             if (httpRequest.uri().indexOf("/") == 0) {
                 if (httpRequest.uri().length() > 1) {
@@ -24,6 +22,18 @@ public class HttpUtil {
             } else {
                 url = httpRequest.uri();
             }
+            return url;
+        }
+        return null;
+    }
+
+    /**
+     * 检测url是否匹配
+     */
+    public static boolean checkUrl(HttpRequest httpRequest, String regex) {
+        String url = buildUrl(httpRequest);
+
+        if (url != null && regex != null) {
             return url.matches(regex);
         }
         return false;
@@ -52,5 +62,35 @@ public class HttpUtil {
                 .matches("^.*text/html.*$") && contentType != null && contentType
                 .matches("^text/html.*$");
     }
+
+    public static void printRequest(HttpRequest request) {
+        // 打印请求方法
+        log.info("METHOD: " + request.method().toString());
+
+        // 打印完整URI
+        String uri = request.uri();
+        log.info("FULL URI: " + uri);
+
+        // 解析并打印路径和查询参数
+        QueryStringDecoder queryStringDecoder = new QueryStringDecoder(uri);
+        log.info("PATH: " + queryStringDecoder.path());
+        Map<String, List<String>> params = queryStringDecoder.parameters();
+        if (!params.isEmpty()) {
+            for (Map.Entry<String, List<String>> param : params.entrySet()) {
+                log.info("QUERY PARAM: " + param.getKey() + " = " + param.getValue());
+            }
+        }
+
+        // 打印请求头
+        HttpHeaders headers = request.headers();
+        if (!headers.isEmpty()) {
+            for (Map.Entry<String, String> header : headers.entries()) {
+                log.info("HEADER: " + header.getKey() + " = " + header.getValue());
+            }
+        }
+        log.info("--- Headers End ---");
+    }
+
+
 
 }
