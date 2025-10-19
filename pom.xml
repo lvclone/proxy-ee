@@ -16,7 +16,6 @@
     <version>1.7.6</version>
     <packaging>jar</packaging>
 
-
     <name>proxyee</name>
     <description>HTTP proxy server,support HTTPS and websocket.MITM impl,intercept and tamper HTTPS traffic.
     </description>
@@ -34,12 +33,7 @@
     <!--        <developerConnection>scm:git:https://github.com/monkeyWie/proxyee.git</developerConnection>-->
     <!--        <url>https://github.com/monkeyWie/proxyee</url>-->
     <!--    </scm>-->
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -115,11 +109,23 @@
             <artifactId>bcpkix-jdk15on</artifactId>
             <version>1.60</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
 
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
         </dependency>
 
         <dependency>
@@ -181,7 +187,6 @@
             </plugin>
         </plugins>
     </build>
-
 
     <profiles>
         <profile>
