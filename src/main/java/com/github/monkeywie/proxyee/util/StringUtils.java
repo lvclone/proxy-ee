@@ -2,9 +2,7 @@ package com.github.monkeywie.proxyee.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.TypeReference;
 import lombok.extern.slf4j.Slf4j;
-
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -187,7 +185,6 @@ public class StringUtils<resultMap> {
         int num = tempStr.length() - str.length();
         return tempStr.substring(0, num) + str;
     }
-
 
     /**
      * 省略中间字符串

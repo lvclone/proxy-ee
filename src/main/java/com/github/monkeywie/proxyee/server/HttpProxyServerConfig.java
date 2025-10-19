@@ -21,7 +21,6 @@ import java.util.List;
 @Data
 public class HttpProxyServerConfig {
 
-
     // 握手协议指纹
     private SslContext clientSslCtx;
 

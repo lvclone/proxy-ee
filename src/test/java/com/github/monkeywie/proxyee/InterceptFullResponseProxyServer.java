@@ -1,5 +1,6 @@
 package com.github.monkeywie.proxyee;
 
+import com.github.monkeywie.proxyee.config.ConfigDefault;
 import com.github.monkeywie.proxyee.intercept.HttpProxyInterceptInitializer;
 import com.github.monkeywie.proxyee.intercept.HttpProxyInterceptPipeline;
 import com.github.monkeywie.proxyee.intercept.common.CertDownIntercept;
@@ -19,8 +20,9 @@ import java.util.Set;
 @Slf4j
 public class InterceptFullResponseProxyServer {
 
+
     public static void main(String[] args) throws Exception {
-        HttpProxyServerConfig config = getHttpProxyServerConfig();
+        HttpProxyServerConfig config = ConfigDefault.getHttpProxyServerConfig();
         new HttpProxyServer()
                 .serverConfig(config)
                 .proxyInterceptInitializer(new HttpProxyInterceptInitializer() {
@@ -54,19 +56,5 @@ public class InterceptFullResponseProxyServer {
                     }
                 })
                 .start(9999);
-    }
-
-    private static HttpProxyServerConfig getHttpProxyServerConfig() {
-        HttpProxyServerConfig config = new HttpProxyServerConfig();
-        config.setHandleSsl(true);
-        // 设置Ciphers 用于改变 Client Hello 握手协议指纹
-        Set<String> defaultCiphers = new LinkedHashSet<String>();
-        defaultCiphers.add("TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_RSA_WITH_AES_128_CBC_SHA");
-        defaultCiphers.add("TLS_RSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA");
-        config.setCiphers(defaultCiphers);
-        return config;
     }
 }

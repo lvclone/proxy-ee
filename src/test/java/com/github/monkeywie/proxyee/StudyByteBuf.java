@@ -138,7 +138,7 @@ public class StudyByteBuf {
         log.info("httpResponseJs.len:{} buf.len:{}", httpResponseJs.length(), httpResponseJsBuf.writerIndex());
 
 
-        System.out.println(httpResponseJsBuf.toString(Charset.defaultCharset()));
+        log.info("toString: {}", httpResponseJsBuf.toString(Charset.defaultCharset()));
 
         int index = ByteUtil.findText(httpResponseJsBuf, str);
         log.info("length: {} index: {}", str.length(), index);

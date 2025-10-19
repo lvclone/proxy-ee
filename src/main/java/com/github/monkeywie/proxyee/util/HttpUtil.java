@@ -32,7 +32,10 @@ public class HttpUtil {
      */
     public static boolean checkUrl(HttpRequest httpRequest, String regex) {
         String url = buildUrl(httpRequest);
+        return checkUrl(url, regex);
+    }
 
+    public static boolean checkUrl(String url,  String regex) {
         if (url != null && regex != null) {
             return url.matches(regex);
         }
