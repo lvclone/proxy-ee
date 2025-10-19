@@ -28,7 +28,7 @@ public class HttpProxyInitializer extends ChannelInitializer {
         if (proxyHandler != null) {
             ch.pipeline().addLast(proxyHandler);
         }
-        HttpProxyServerConfig serverConfig = ((HttpProxyServerHandler) clientChannel.pipeline().get("serverHandle")).getServerConfig();
+        HttpProxyServerConfig serverConfig = ((HttpProxyServerHandler) clientChannel.pipeline().get("serverHandle")).getContext().getMaster().getServerConfig();
         if (requestProto.getSsl()) {
             ch.pipeline().addLast(serverConfig.getClientSslCtx().newHandler(ch.alloc(), requestProto.getHost(), requestProto.getPort()));
         }

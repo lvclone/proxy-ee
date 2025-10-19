@@ -51,7 +51,15 @@ public class HttpProxyServer {
     private EventLoopGroup bossGroup;
     private EventLoopGroup workerGroup;
 
+    /**
+     * {@code @Description} 初始化
+     * {@code @Author} lv.mr
+     * {@code @Date} 2025/3/29 22:52
+     * {@code @Param} []
+     * {@code @Return} void
+     */
     private void init() {
+        // 初始化-配置项
         if (serverConfig == null) {
             serverConfig = new HttpProxyServerConfig();
         }
@@ -105,8 +113,7 @@ public class HttpProxyServer {
         return this;
     }
 
-    public HttpProxyServer proxyInterceptInitializer(
-            HttpProxyInterceptInitializer proxyInterceptInitializer) {
+    public HttpProxyServer proxyInterceptInitializer(HttpProxyInterceptInitializer proxyInterceptInitializer) {
         this.proxyInterceptInitializer = proxyInterceptInitializer;
         return this;
     }
@@ -131,6 +138,13 @@ public class HttpProxyServer {
         start(null, port);
     }
 
+    /**
+     * {@code @Description} 开始
+     * {@code @Author} lv.mr
+     * {@code @Date} 2025/3/29 22:51
+     * {@code @Param} [ip, port]
+     * {@code @Return} void
+     */
     public void start(String ip, int port) {
         try {
             ChannelFuture channelFuture = doBind(ip, port);
@@ -170,6 +184,13 @@ public class HttpProxyServer {
         return future;
     }
 
+    /**
+     * {@code @Description} 初始化-绑定
+     * {@code @Author} lv.mr
+     * {@code @Date} 2025/3/29 22:51
+     * {@code @Param} [ip, port]
+     * {@code @Return} io.netty.channel.ChannelFuture
+     */
     private ChannelFuture doBind(String ip, int port) {
         init();
         bossGroup = new NioEventLoopGroup(serverConfig.getBossGroupThreads());
@@ -179,26 +200,8 @@ public class HttpProxyServer {
                 .channel(NioServerSocketChannel.class)
 //                .option(ChannelOption.SO_BACKLOG, 100)
                 .handler(new LoggingHandler(LogLevel.DEBUG))
-                .childHandler(new ChannelInitializer<Channel>() {
-
-                    @Override
-                    protected void initChannel(Channel ch) throws Exception {
-                        ch.pipeline().addLast("httpCodec", new HttpServerCodec(
-                                serverConfig.getMaxInitialLineLength(),
-                                serverConfig.getMaxHeaderSize(),
-                                serverConfig.getMaxChunkSize()));
-                        if (serverConfig.getIdleStateCheck() != null) {
-                            IdleStateCheck idleStateCheck = serverConfig.getIdleStateCheck();
-                            ch.pipeline().addLast("idleStateCheck",
-                                    new IdleStateHandler(idleStateCheck.getReaderIdleTime(), idleStateCheck.getWriterIdleTime(),
-                                            idleStateCheck.getAllIdleTime(), TimeUnit.MILLISECONDS)
-                            );
-                        }
-                        ch.pipeline().addLast("serverHandle",
-                                new HttpProxyServerHandler(serverConfig, proxyInterceptInitializer, proxyConfig,
-                                        httpProxyExceptionHandle));
-                    }
-                });
+                .childHandler(new ProxyeeProxyInitializer(serverConfig, proxyInterceptInitializer, proxyConfig,
+                        httpProxyExceptionHandle));
 
         return ip == null ? bootstrap.bind(port) : bootstrap.bind(ip, port);
     }
