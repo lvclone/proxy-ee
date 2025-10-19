@@ -5,8 +5,11 @@ import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpResponse;
 import io.netty.util.AsciiString;
+import io.netty.util.internal.logging.InternalLogger;
+import io.netty.util.internal.logging.InternalLoggerFactory;
 
 public class HttpUtil {
+    private final static InternalLogger log = InternalLoggerFactory.getInstance(HttpUtil.class);
 
     /**
      * 检测url是否匹配
@@ -24,6 +27,7 @@ public class HttpUtil {
             } else {
                 url = httpRequest.uri();
             }
+            log.info("url:{}", url);
             return url.matches(regex);
         }
         return false;
