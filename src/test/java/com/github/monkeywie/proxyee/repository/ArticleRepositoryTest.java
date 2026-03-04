@@ -1,12 +1,13 @@
-package com.github.monkeywie.proxyee.mongo;
+package com.github.monkeywie.proxyee.repository;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.json.JSONUtil;
-import com.github.monkeywie.proxyee.mongodb.model.Article;
+import com.github.monkeywie.proxyee.SpringBootDemoMongodbApplicationTests;
 import com.github.monkeywie.proxyee.mongodb.repository.ArticleRepository;
 import com.google.common.collect.Lists;
+import com.github.monkeywie.proxyee.mongodb.model.Article;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

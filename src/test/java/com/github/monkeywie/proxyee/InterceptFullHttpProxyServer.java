@@ -9,12 +9,13 @@ import com.github.monkeywie.proxyee.intercept.common.FullRequestIntercept;
 import com.github.monkeywie.proxyee.intercept.common.FullResponseIntercept;
 import com.github.monkeywie.proxyee.server.HttpProxyServer;
 import com.github.monkeywie.proxyee.server.HttpProxyServerConfig;
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.Charset;
 
+@Slf4j
 public class InterceptFullHttpProxyServer {
 
     public static void main(String[] args) throws Exception {
@@ -58,13 +59,13 @@ public class InterceptFullHttpProxyServer {
 
                             @Override
                             public void afterResponse(Channel clientChannel, Channel proxyChannel, HttpResponse httpResponse, HttpProxyInterceptPipeline pipeline) throws Exception {
-                                System.out.println(fullHttpRequest.toString());
-                                System.out.println(this.fullHttpRequest.content().toString(Charset.defaultCharset()));
+                                log.info("\nfullHttpRequest/-/{}\ncontent/--/{}\n", fullHttpRequest.toString(), this.fullHttpRequest.content().toString(Charset.defaultCharset()));
                                 this.fullHttpRequest.release();
 
                                 FullHttpResponse fullHttpResponse = (FullHttpResponse) httpResponse;
-                                System.out.println(fullHttpResponse.toString());
-                                System.out.println(fullHttpResponse.content().toString(Charset.defaultCharset()));
+                                log.info("headers:{}", fullHttpResponse.headers());
+                                log.info("\nfullHttpResponse/---/{}\ncontent/----/{}\n", fullHttpResponse.toString(), fullHttpResponse.content().toString(Charset.defaultCharset()));
+
                                 pipeline.afterResponse(clientChannel, proxyChannel, httpResponse);
                             }
                         });

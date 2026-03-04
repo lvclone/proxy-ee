@@ -1,8 +1,6 @@
 package com.github.monkeywie.proxyee.util;
 
 import com.alibaba.fastjson.*;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +13,6 @@ import java.util.List;
  * @Author: Wangll
  */
 public class BeanUtils {
-
-    protected final Log logger = LogFactory.getLog(BeanUtils.class);
 
     /**
      * 首字母转大写

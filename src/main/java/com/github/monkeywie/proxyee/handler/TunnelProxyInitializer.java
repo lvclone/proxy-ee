@@ -48,7 +48,7 @@ public class TunnelProxyInitializer extends ChannelInitializer {
                 ctx0.channel().close();
                 clientChannel.close();
                 HttpProxyExceptionHandle exceptionHandle = ((HttpProxyServerHandler) clientChannel.pipeline()
-                        .get("serverHandle")).getExceptionHandle();
+                        .get("serverHandle")).getContext().getMaster().getExceptionHandle();
                 exceptionHandle.afterCatch(clientChannel, ctx0.channel(), cause);
             }
         });

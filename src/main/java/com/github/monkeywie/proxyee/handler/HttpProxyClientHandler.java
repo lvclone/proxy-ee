@@ -52,7 +52,7 @@ public class HttpProxyClientHandler extends ChannelInboundHandlerAdapter {
         ctx.channel().close();
         clientChannel.close();
         HttpProxyExceptionHandle exceptionHandle = ((HttpProxyServerHandler) clientChannel.pipeline()
-                .get("serverHandle")).getExceptionHandle();
+                .get("serverHandle")).getContext().getMaster().getExceptionHandle();
         exceptionHandle.afterCatch(clientChannel, ctx.channel(), cause);
     }
 }

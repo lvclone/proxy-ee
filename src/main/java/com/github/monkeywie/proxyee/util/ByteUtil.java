@@ -1,11 +1,15 @@
 package com.github.monkeywie.proxyee.util;
 
+import com.alibaba.fastjson.JSONObject;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
+import io.netty.channel.Channel;
+import io.netty.handler.codec.http.*;
 import io.netty.util.internal.logging.InternalLogger;
 import io.netty.util.internal.logging.InternalLoggerFactory;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class ByteUtil {
     private final static InternalLogger log = InternalLoggerFactory.getInstance(ByteUtil.class);
@@ -53,6 +57,29 @@ public class ByteUtil {
         return byteBuf;
     }
 
+
+    public static void buildContext(Channel clientChannel, JSONObject connection, byte[] bytes) {
+        HttpResponse httpResponse = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
+        connection.forEach((k, v) -> {
+//            content-type
+            httpResponse.headers().set(k.toLowerCase(), v);
+        });
+        httpResponse.headers().set(HttpHeaderNames.CONTENT_LENGTH, bytes.length);
+
+        clientChannel.writeAndFlush(httpResponse);
+        clientChannel.writeAndFlush(new DefaultLastHttpContent().content().writeBytes(bytes));
+
+    }
+    public static void buildContext(Channel clientChannel, String contentType, Object connection,  byte[] bytes) {
+        HttpResponse httpResponse = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
+        httpResponse.headers().set(HttpHeaderNames.CONTENT_TYPE, contentType);
+        httpResponse.headers().set(HttpHeaderNames.CONTENT_LENGTH, bytes.length);
+        httpResponse.headers().set(HttpHeaderNames.CONNECTION, connection);
+        clientChannel.writeAndFlush(httpResponse);
+        clientChannel.writeAndFlush(new DefaultLastHttpContent().content().writeBytes(bytes));
+
+    }
+
     /**
      * 覆盖
      * @param byteBuf
@@ -80,11 +107,23 @@ public class ByteUtil {
      * @return
      */
     public static ByteBuf valueOf(String str) {
+//        ByteBuf byteBuf = Unpooled.copiedBuffer("Hello, Netty!".getBytes());
+
         ByteBuf httpResponseJsBuf = Unpooled.buffer();
         httpResponseJsBuf.writeBytes(str.getBytes());
 //        System.out.println(httpResponseJsBuf.writerIndex());
         return httpResponseJsBuf;
     }
 
+
+    public static void main(String[] args) {
+        String str = FileUtils.readLine("./cache/splidejs/luanma_webpack-runtime-654f5c8e2fdb99bf659e.js");
+//        String str = FileUtils.readLine("./cache/splidejs/webpack-runtime-654f5c8e2fdb99bf659e.js");
+        ByteBuf byteBuf = Unpooled.copiedBuffer(str.getBytes());
+        String context = byteBuf.toString(StandardCharsets.UTF_8);
+
+        System.out.println(context);
+//        str.getBytes(charset);
+    }
 
 }

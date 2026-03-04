@@ -3,13 +3,10 @@ package com.github.monkeywie.proxyee;
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
 import com.github.monkeywie.proxyee.mongodb.service.HttpCacheService;
-import com.github.monkeywie.proxyee.server.HttpProxyServerConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import javax.annotation.Resource;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 /**
  * <p>
@@ -42,7 +39,7 @@ public class SpringBootDemoMongodbApplication {
 //            // 在这里编写你启动后想要执行的代码
 //            System.out.println("Application started with arguments: " + args);
 //
-//            HttpProxyServerConfig config = getHttpProxyServerConfig();
+//            HttpProxyServerConfig config = ConfigDefault.getHttpProxyServerConfig();
 //            new HttpProxyServer()
 //                    .serverConfig(config)
 //                    .proxyInterceptInitializer(new HttpProxyInterceptInitializer() {
@@ -53,22 +50,11 @@ public class SpringBootDemoMongodbApplication {
 //                        }
 //                    })
 //                    .start(9999);
+//
+//
 //        };
 //    }
 
-    private static HttpProxyServerConfig getHttpProxyServerConfig() {
-        HttpProxyServerConfig config = new HttpProxyServerConfig();
-        config.setHandleSsl(true);
-        // 设置Ciphers 用于改变 Client Hello 握手协议指纹
-        Set<String> defaultCiphers = new LinkedHashSet<String>();
-        defaultCiphers.add("TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_RSA_WITH_AES_128_CBC_SHA");
-        defaultCiphers.add("TLS_RSA_WITH_AES_128_GCM_SHA256");
-        defaultCiphers.add("TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA");
-        config.setCiphers(defaultCiphers);
-        return config;
-    }
 
 }
 

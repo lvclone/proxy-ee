@@ -11,11 +11,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.github</groupId>
+    <groupId>com.github.monkeywie.proxyee</groupId>
     <artifactId>http-cache</artifactId>
     <version>1.7.6</version>
     <packaging>jar</packaging>
-
 
     <name>proxyee</name>
     <description>HTTP proxy server,support HTTPS and websocket.MITM impl,intercept and tamper HTTPS traffic.
@@ -34,12 +33,7 @@
     <!--        <developerConnection>scm:git:https://github.com/monkeyWie/proxyee.git</developerConnection>-->
     <!--        <url>https://github.com/monkeyWie/proxyee</url>-->
     <!--    </scm>-->
-    <scm>
-        <connection/>
-        <developerConnection/>
-        <tag/>
-        <url/>
-    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -48,6 +42,9 @@
         <fastjson.version>1.2.72</fastjson.version>
         <hutool.version>5.4.5</hutool.version>
         <guava.version>29.0-jre</guava.version>
+        <!--   冲突     -->
+<!--        <guava.version>31.1-jre</guava.version>-->
+        <commons.io.version>2.5</commons.io.version>
     </properties>
     <dependencies>
         <dependency>
@@ -115,6 +112,13 @@
             <artifactId>bcpkix-jdk15on</artifactId>
             <version>1.60</version>
         </dependency>
+        <!--冲突-->
+        <!--<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>-->
 
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -128,6 +132,50 @@
             <version>4.13.2</version>
             <scope>compile</scope>
         </dependency>
+
+        <!--        <dependency>-->
+        <!--            <groupId>com.kkmh</groupId>-->
+        <!--            <artifactId>common</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>us.codecraft</groupId>
+            <artifactId>webmagic-extension</artifactId>
+            <version>0.7.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.9.3</version>
+        </dependency>
+
+        <!--    websocket client    -->
+        <dependency>
+            <groupId>org.java-websocket</groupId>
+            <artifactId>Java-WebSocket</artifactId>
+            <version>1.5.3</version>
+        </dependency>
+
+        <!--    brotli解压工具    -->
+        <dependency>
+            <groupId>com.aayushatharva.brotli4j</groupId>
+            <artifactId>brotli4j</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.brotli</groupId>
+            <artifactId>dec</artifactId>
+            <version>0.1.2</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.apache.httpcomponents.client5</groupId>
@@ -196,7 +244,6 @@
         </plugins>
     </build>
 
-
     <profiles>
         <profile>
             <id>release</id>
@@ -260,7 +307,8 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.github.monkeywie.proxyee.HttpProxyServerApp</mainClass>
+                                    <mainClass>com.github.monkeywie.proxyee.SpringBootDemoMongodbApplication</mainClass>
+<!--                                    <mainClass>com.github.monkeywie.proxyee.HttpProxyServerApp</mainClass>-->
                                 </manifest>
                             </archive>
                             <descriptorRefs>

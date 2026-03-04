@@ -2,17 +2,19 @@ package com.github.monkeywie.proxyee.intercept.common;
 
 import com.github.monkeywie.proxyee.crt.CertUtil;
 import com.github.monkeywie.proxyee.intercept.HttpProxyIntercept;
-import com.github.monkeywie.proxyee.intercept.HttpProxyInterceptPipeline;
 import com.github.monkeywie.proxyee.server.HttpProxyCACertFactory;
-import com.github.monkeywie.proxyee.util.ProtoUtil.RequestProto;
+import com.github.monkeywie.proxyee.util.ByteUtil;
+import com.github.monkeywie.proxyee.util.FileUtils;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.security.cert.X509Certificate;
 
 /**
  * 处理证书下载页面 http://proxyServerIp:proxyServerPort
  */
+@Slf4j
 public class CertDownIntercept extends HttpProxyIntercept {
 
     private boolean isDirect = false;
@@ -48,35 +50,35 @@ public class CertDownIntercept extends HttpProxyIntercept {
         this.cert = caCert;
     }
 
-    @Override
-    public void beforeRequest(Channel clientChannel, HttpRequest httpRequest,
-                              HttpProxyInterceptPipeline pipeline) throws Exception {
-        RequestProto requestProto = pipeline.getRequestProto();
-        if (!requestProto.getProxy()) {
-            isDirect = true;
-            if (httpRequest.uri().matches("^.*/ca.crt.*$")) {  //下载证书
-                HttpResponse httpResponse = new DefaultHttpResponse(HttpVersion.HTTP_1_1,
-                        HttpResponseStatus.OK);
 
-                byte[] bts = this.cert == null ? CertUtil
-                        .loadCert(Thread.currentThread().getContextClassLoader().getResourceAsStream("ca.crt"))
-                        .getEncoded() :
-                        cert.getEncoded();
+    public boolean beforeRequest(Channel clientChannel, HttpRequest httpRequest) throws Exception {
+        if (httpRequest.uri().matches("^.*/ca.crt.*$")) {  //下载证书
+            HttpResponse httpResponse = new DefaultHttpResponse(HttpVersion.HTTP_1_1,
+                    HttpResponseStatus.OK);
 
-                httpResponse.headers().set(HttpHeaderNames.CONTENT_TYPE, "application/x-x509-ca-cert");
-                httpResponse.headers().set(HttpHeaderNames.CONTENT_LENGTH, bts.length);
-                httpResponse.headers().set(HttpHeaderNames.CONNECTION, HttpHeaderValues.CLOSE);
-                HttpContent httpContent = new DefaultLastHttpContent();
-                httpContent.content().writeBytes(bts);
-                clientChannel.writeAndFlush(httpResponse);
-                clientChannel.writeAndFlush(httpContent);
-                clientChannel.close();
-            } else if (httpRequest.uri().matches("^.*/favicon.ico$")) {
-                clientChannel.close();
-            } else {  //跳转下载页面
-                HttpResponse httpResponse = new DefaultHttpResponse(HttpVersion.HTTP_1_1,
-                        HttpResponseStatus.OK);
-                String html = "<html><body><div style=\"margin-top:100px;text-align:center;\"><a href=\"ca.crt\">ProxyeeRoot ca.crt</a></div></body></html>";
+            byte[] bts = this.cert == null ? CertUtil
+                    .loadCert(Thread.currentThread().getContextClassLoader().getResourceAsStream("ca.crt"))
+                    .getEncoded() :
+                    cert.getEncoded();
+
+            httpResponse.headers().set(HttpHeaderNames.CONTENT_TYPE, "application/x-x509-ca-cert");
+            httpResponse.headers().set(HttpHeaderNames.CONTENT_LENGTH, bts.length);
+            httpResponse.headers().set(HttpHeaderNames.CONNECTION, HttpHeaderValues.CLOSE);
+            HttpContent httpContent = new DefaultLastHttpContent();
+            httpContent.content().writeBytes(bts);
+            clientChannel.writeAndFlush(httpResponse);
+            clientChannel.writeAndFlush(httpContent);
+            clientChannel.close();
+            return true;
+        } else if (httpRequest.uri().matches("^.*/favicon.ico$")) {
+            clientChannel.close();
+            return true;
+        } else if (httpRequest.uri().matches("^/$")) {  //跳转下载页面
+            String html = "<html><body><div style=\"margin-top:100px;text-align:center;\"><a href=\"ca.crt\">ProxyeeRoot ca.crt</a></div></body></html>";
+            html = FileUtils.readLine("./cache/pictureRecording/splidejs.com/index.html");
+            ByteUtil.buildContext(clientChannel, "text/html;charset=utf-8", HttpHeaderValues.KEEP_ALIVE, html.getBytes());
+            /*
+                HttpResponse httpResponse = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
                 httpResponse.headers().set(HttpHeaderNames.CONTENT_TYPE, "text/html;charset=utf-8");
                 httpResponse.headers().set(HttpHeaderNames.CONTENT_LENGTH, html.getBytes().length);
                 httpResponse.headers().set(HttpHeaderNames.CONNECTION, HttpHeaderValues.KEEP_ALIVE);
@@ -84,17 +86,10 @@ public class CertDownIntercept extends HttpProxyIntercept {
                 httpContent.content().writeBytes(html.getBytes());
                 clientChannel.writeAndFlush(httpResponse);
                 clientChannel.writeAndFlush(httpContent);
-            }
-        } else {
-            pipeline.beforeRequest(clientChannel, httpRequest);
+            */
+            return true;
         }
+        return false;
     }
 
-    @Override
-    public void beforeRequest(Channel clientChannel, HttpContent httpContent,
-                              HttpProxyInterceptPipeline pipeline) throws Exception {
-        if (!isDirect) {
-            pipeline.beforeRequest(clientChannel, httpContent);
-        }
-    }
 }
