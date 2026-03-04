@@ -1,8 +1,11 @@
 package com.github.monkeywie.proxyee.util;
 
+import com.alibaba.fastjson.JSON;
 import io.netty.handler.codec.http.*;
 import io.netty.util.AsciiString;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -76,19 +79,23 @@ public class HttpUtil {
         log.info("PATH: " + queryStringDecoder.path());
         Map<String, List<String>> params = queryStringDecoder.parameters();
         if (!params.isEmpty()) {
+            Map<String,String> queryMap = new HashMap<>();
             for (Map.Entry<String, List<String>> param : params.entrySet()) {
-                log.info("QUERY PARAM: " + param.getKey() + " = " + param.getValue());
+                queryMap.put(param.getKey(), param.getValue().get(0));
             }
+            log.info("queryMap: {}", JSON.toJSONString(queryMap));
         }
 
         // 打印请求头
         HttpHeaders headers = request.headers();
         if (!headers.isEmpty()) {
+            Map<String,String> headersMap = new HashMap<>();
             for (Map.Entry<String, String> header : headers.entries()) {
-                log.info("HEADER: " + header.getKey() + " = " + header.getValue());
+                headersMap.put(header.getKey(), header.getValue());
             }
+            log.info("HEADER: {}", JSON.toJSONString(headersMap));
         }
-        log.info("--- Headers End ---");
+
     }
 
 
